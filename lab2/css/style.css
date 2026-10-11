@@ -182,7 +182,7 @@ footer p {
 
 /* карточки участниц и проектов */
 
-
+.member-image,
 .group-image {
   position: relative;
   margin: 0 auto;
@@ -192,13 +192,17 @@ footer p {
   transition: all 0.3s ease-in-out;
 }
 
+.member-image {
+    width: 400px;
+    height: 400px;
+}
 
 .group-image {
     width: auto;
     height: auto;
 }
 
-
+.member-image > img,
 .group-image > img {
   display: block;
   width: 100%;
@@ -259,7 +263,7 @@ footer p {
   border-radius: 0;
 }
 
-
+.member-image:hover .image-switch,
 .group-image:hover .image-switch {
   opacity: 1;
 }
@@ -271,4 +275,52 @@ footer p {
 
 .image-switch-item:hover::after {
   background-color: var(--main-color--light);
+}
+
+/* список участниц */
+
+.members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.member-card {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.member-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.member-info {
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 60px;
+}
+
+.member-info h3 {
+    color: var(--main-color--dark);
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.member-info p {
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.member-info p strong {
+    color: var(--main-color);
 }
