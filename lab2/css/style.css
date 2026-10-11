@@ -183,6 +183,7 @@ footer p {
 /* карточки участниц и проектов */
 
 .member-image,
+.project-image,
 .group-image {
   position: relative;
   margin: 0 auto;
@@ -197,12 +198,18 @@ footer p {
     height: 400px;
 }
 
+.project-image {
+    width: 400px;
+    height: 520px;
+}
+
 .group-image {
     width: auto;
     height: auto;
 }
 
 .member-image > img,
+.project-image > img,
 .group-image > img {
   display: block;
   width: 100%;
@@ -264,6 +271,7 @@ footer p {
 }
 
 .member-image:hover .image-switch,
+.project-image:hover .image-switch,
 .group-image:hover .image-switch {
   opacity: 1;
 }
@@ -323,4 +331,107 @@ footer p {
 
 .member-info p strong {
     color: var(--main-color);
+}
+
+/* список проектов */
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-item {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.project-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-info {
+    flex: 1;
+    text-align: left;
+    margin-left: 30px;
+    margin-right: 40px;
+}
+
+.project-info h3 {
+    color: var(--main-color--dark);
+    font-size: 28px;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.project-info p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.project-info p strong {
+    color: var(--main-color);
+}
+
+.project-award {
+    background-color: var(--main-color--light);
+    border-left: 5px solid var(--main-color);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.youtube-cover {
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.youtube-cover:hover {
+    transform: scale(1.08);
+}
+
+.youtube-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 0, 0, 0.85);
+    color: #fff;
+    font-size: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.youtube-cover:hover .play-icon {
+    background-color: #ff0000;
+    transform: translate(-50%, -50%) scale(1.1);
 }
