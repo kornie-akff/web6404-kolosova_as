@@ -234,7 +234,6 @@ footer p {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  cursor: pointer;
 }
 
 .image-switch-item::after {
