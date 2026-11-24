@@ -1,9 +1,32 @@
 /* общие цвета как переменные */
 :root {
-  --main-color: #7149ab;
-  /* --main-color--background: #ae8be0; */
-  --main-color--light: #e4d7f7;
-  --main-color--dark: #4a306e;
+    --main-color: #7149ab;
+    --main-color-light: #e4d7f7;
+    --main-color-dark: #4a306e;
+
+    --color-surface: #FFFFFF;
+
+    --color-tiktok: #cba9ff;
+    --color-tiktok-hover: #9f83ca;
+    --color-youtube: #c20000;
+    --color-youtube-hover: #9f0000;
+    --color-telegram: #0080c0;
+    --color-telegram-hover: #006699;
+
+    --color-text: #333333;
+    --color-text-muted: #444444;
+    --color-text-inverse: #FFFFFF;
+
+    --color-play: rgba(255, 0, 0, 0.85);
+    --color-play-hover: #ff0000;
+    --color-overlay-bar: rgba(255, 255, 255, 0.4);
+    --color-transparent: transparent;
+
+    --shadow-general: rgba(0, 0, 0, 0.15);
+    --shadow-general-hover: rgba(0, 0, 0, 0.25);
+    --shadow-header: rgba(0, 0, 0, 0.5);
+
+    --color-border: #EEEEEE;
 }
 
 /* общие настройки */
@@ -18,8 +41,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #333;
-    background-color: var(--main-color--light);
+    color: var(--color-text);
+    background-color: var(--main-color-light);
 }
 
 h1 {
@@ -32,7 +55,7 @@ h1 {
 h2 {
     font-size: 20px;
     text-align: center;
-    color: var(--main-color--dark);
+    color: var(--main-color-dark);
     margin-bottom: 15px;
 }
 
@@ -58,7 +81,7 @@ img {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px var(--shadow-header);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -97,55 +120,55 @@ img {
     border-radius: 25px;
     font-weight: bold;
     font-size: 16px;
-    border: 2px solid transparent;
+    border: 2px solid var(--color-transparent);
 }
 
 .btn {
-    background-color: var(--main-color--light);
+    background-color: var(--main-color-light);
     color: var(--main-color);
 }
 
 .btn:hover {
-    background-color: var(--main-color--dark);
-    color: var(--main-color--light);
+    background-color: var(--main-color-dark);
+    color: var(--main-color-light);
 }
 
 .btn-blocked {
     background-color: var(--main-color);
-    color: var(--main-color--light);
+    color: var(--main-color-light);
 }
 
 .btn-tiktok {
-    background-color: #cba9ff;
-    color: #000000;
+    background-color: var(--color-tiktok);
+    color: var(--color-text);
     margin: 0px 20px;
 }
 
 .btn-tiktok:hover {
-    background-color: #9f83ca;
-    color: #000000;
+    background-color: var(--color-tiktok-hover);
+    color: var(--color-text);
 }
 
 .btn-youtube {
-    background-color: #c20000;
-    color: #fff;
+    background-color: var(--color-youtube);
+    color: var(--color-text-inverse);
     margin: 0px 20px;
 }
 
 .btn-youtube:hover {
-    background-color: #9f0000;
-    color: #fff;
+    background-color: var(--color-youtube-hover);
+    color: var(--color-text-inverse);
 }
 
 .btn-telegram {
-    background-color: #0080c0;
-    color: #fff;
+    background-color: var(--color-telegram);
+    color: var(--color-text-inverse);
     margin: 0px 20px;
 }
 
 .btn-telegram:hover {
-    background-color: #006699;
-    color: #fff;
+    background-color: var(--color-telegram-hover);
+    color: var(--color-text-inverse);
 }
 
 .btn-telegram-personal {
@@ -168,8 +191,8 @@ section {
 /* низ */
 
 footer {
-    background-color: var(--main-color--dark);
-    color: #fff;
+    background-color: var(--main-color-dark);
+    color: var(--color-text-inverse);
     text-align: center;
     padding-bottom: 15px;
     margin-top: 30px;
@@ -189,7 +212,7 @@ footer p {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px var(--shadow-general);
   transition: all 0.3s ease-in-out;
 }
 
@@ -242,7 +265,7 @@ footer p {
   margin: 0 auto;
   height: 10px;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: var(--color-overlay-bar);
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
@@ -281,7 +304,7 @@ footer p {
 }
 
 .image-switch-item:hover::after {
-  background-color: var(--main-color--light);
+  background-color: var(--main-color-light);
 }
 
 /* FLEXBOX список участниц */
@@ -299,19 +322,16 @@ footer p {
     display: flex;
     gap: 40px;
     align-items: center;
-
-    background-color: #fff;
+    background-color: var(--color-surface);
+    box-shadow: 0 6px 20px var(--shadow-general);
     border-radius: 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-
     padding: 30px;
-
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .member-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px var(--shadow-general-hover);
 }
 
 .member-card:nth-child(even) {
@@ -326,7 +346,7 @@ footer p {
 }
 
 .member-info h3 {
-    color: var(--main-color--dark);
+    color: var(--main-color-dark);
     font-size: 30px;
     margin-bottom: 15px;
     text-align: left;
@@ -334,9 +354,7 @@ footer p {
 
 .member-info p {
     font-size: 17px;
-
-    color: #444;
-    
+    color: var(--color-text-muted);
     margin-bottom: 10px;
     text-align: left;
 }
@@ -360,26 +378,24 @@ footer p {
     grid-template-columns: 400px 1fr;
     gap: 40px;
     align-items: center;
-
-    background-color: #fff;
+    background-color: var(--color-surface);
+    box-shadow: 0 6px 20px var(--shadow-general);
     border-radius: 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-
     padding: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px var(--shadow-general-hover);
 }
 
 .project-item:nth-child(even) {
-  grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr 400px;
 }
 
 .project-item:nth-child(even) .project-image {
-  order: 2;
+    order: 2;
 }
 
 .project-info {
@@ -390,7 +406,7 @@ footer p {
 }
 
 .project-info h3 {
-    color: var(--main-color--dark);
+    color: var(--main-color-dark);
     font-size: 28px;
     margin-bottom: 12px;
     text-align: left;
@@ -398,7 +414,7 @@ footer p {
 
 .project-info p {
     font-size: 16px;
-    color: #444;
+    color: var(--color-text-muted);
     margin-bottom: 10px;
     text-align: left;
 }
@@ -408,7 +424,7 @@ footer p {
 }
 
 .project-award {
-    background-color: var(--main-color--light);
+    background-color: var(--main-color-light);
     border-left: 5px solid var(--main-color);
     padding: 10px 15px;
     border-radius: 8px;
@@ -445,8 +461,8 @@ footer p {
     transform: translate(-50%, -50%);
     width: 70px;
     height: 70px;
-    background-color: rgba(255, 0, 0, 0.85);
-    color: #fff;
+    background-color: var(--color-play);
+    color: var(--color-text-inverse);
     font-size: 28px;
     border-radius: 50%;
     display: flex;
@@ -457,7 +473,7 @@ footer p {
 }
 
 .youtube-cover:hover .play-icon {
-    background-color: #ff0000;
+    background-color: var(--color-play-hover);
     transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -475,10 +491,10 @@ table {
     max-width: 1100px;
     margin: 0 auto;
     border-collapse: collapse;
-    background-color: #fff;
+    background-color: var(--color-surface);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px var(--shadow-general);
 }
 
 thead {
@@ -486,7 +502,7 @@ thead {
 }
 
 thead th {
-    color: #fff;
+    color: var(--color-text-inverse);
     font-size: 16px;
     padding: 15px 20px;
     border-bottom: 2px solid var(--main-color);
@@ -495,14 +511,14 @@ thead th {
 
 tbody td {
     padding: 12px 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-border);
     font-size: 15px;
-    color: #333;
+    color: var(--color-text);
     vertical-align: middle;
 }
 
 tbody tr:hover {
-    background-color: var(--main-color--light);
+    background-color: var(--main-color-light);
 }
 
 tbody td a {
@@ -513,13 +529,13 @@ tbody td a {
 }
 
 tbody td a:hover {
-    color: var(--main-color--dark);
+    color: var(--main-color-dark);
     text-decoration: underline;
 }
 
 tbody td:nth-child(1) {
     font-weight: bold;
-    color: var(--main-color--dark);
+    color: var(--main-color-dark);
 }
 
 thead th,
