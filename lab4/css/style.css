@@ -74,7 +74,7 @@ img {
 
 /* шапка */
 
-#main-header {
+.header {
     background-color: var(--main-color);
     padding: 16px 60px;
     margin-bottom: 30px;
@@ -87,7 +87,7 @@ img {
     z-index: 100;
 }
 
-#main-header nav {
+.header__nav {
     display: flex;
     text-align: center;
     align-items: center;
@@ -95,13 +95,13 @@ img {
     justify-content: flex-end;
 }
 
-#main-header .logo {
+.header__logo {
     display: flex;
     align-items: center;
     flex-shrink: 0;
 }
 
-#main-header .logo img {
+.header__logo-img {
     height: 60px;
     width: auto;
     display: block;
@@ -112,7 +112,7 @@ img {
 /* кнопки */
 
 .btn,
-.btn-blocked {
+.btn--blocked {
     display: inline-block;
     padding: 10px 25px;
     width: 160px;
@@ -133,45 +133,45 @@ img {
     color: var(--main-color-light);
 }
 
-.btn-blocked {
+.btn--blocked {
     background-color: var(--main-color);
     color: var(--main-color-light);
 }
 
-.btn-tiktok {
+.btn--tiktok {
     background-color: var(--color-tiktok);
     color: var(--color-text);
     margin: 0px 20px;
 }
 
-.btn-tiktok:hover {
+.btn--tiktok:hover {
     background-color: var(--color-tiktok-hover);
     color: var(--color-text);
 }
 
-.btn-youtube {
+.btn--youtube {
     background-color: var(--color-youtube);
     color: var(--color-text-inverse);
     margin: 0px 20px;
 }
 
-.btn-youtube:hover {
+.btn--youtube:hover {
     background-color: var(--color-youtube-hover);
     color: var(--color-text-inverse);
 }
 
-.btn-telegram {
+.btn--telegram {
     background-color: var(--color-telegram);
     color: var(--color-text-inverse);
     margin: 0px 20px;
 }
 
-.btn-telegram:hover {
+.btn--telegram:hover {
     background-color: var(--color-telegram-hover);
     color: var(--color-text-inverse);
 }
 
-.btn-telegram-personal {
+.member-card__tg {
     display: flex;
     align-items: center;
     flex-shrink: 0;
@@ -190,7 +190,7 @@ section {
 
 /* низ */
 
-footer {
+.footer {
     background-color: var(--main-color-dark);
     color: var(--color-text-inverse);
     text-align: center;
@@ -199,14 +199,14 @@ footer {
     font-size: 14px;
 }
 
-footer p {
+.footer p {
     margin: 0;
 }
 
 /* карточки участниц и проектов */
 
-.member-image,
-.project-image,
+.member-card__image,
+.project-card__image,
 .group-image {
   position: relative;
   margin: 0 auto;
@@ -216,12 +216,12 @@ footer p {
   transition: all 0.3s ease-in-out;
 }
 
-.member-image {
+.member-card__image {
     width: 400px;
     height: 400px;
 }
 
-.project-image {
+.project-card__image {
     width: 400px;
     height: 520px;
 }
@@ -231,8 +231,8 @@ footer p {
     height: auto;
 }
 
-.member-image > img,
-.project-image > img,
+.member-card__image > img,
+.project-card__image > img,
 .group-image > img {
   display: block;
   width: 100%;
@@ -252,14 +252,14 @@ footer p {
   transition: all 0.3s ease-in-out;
 }
 
-.image-switch-item {
+.image-switch__item {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.image-switch-item::after {
+.image-switch__item::after {
   content: "";
   width: 90%;
   margin: 0 auto;
@@ -270,7 +270,7 @@ footer p {
   transition: all 0.3s ease-in-out;
 }
 
-.switched-image {
+.image-switch__switched {
   position: absolute;
   left: 50%;
   top: 0;
@@ -283,7 +283,7 @@ footer p {
   pointer-events: none;
 }
 
-.switched-image img {
+.image-switch__switched img {
   display: block;
   width: 100%;
   height: 100%;
@@ -292,18 +292,18 @@ footer p {
   border-radius: 0;
 }
 
-.member-image:hover .image-switch,
-.project-image:hover .image-switch,
+.member-card__image:hover .image-switch,
+.project-card__image:hover .image-switch,
 .group-image:hover .image-switch {
   opacity: 1;
 }
 
-.image-switch-item:hover .switched-image {
+.image-switch__item:hover .image-switch__switched {
   opacity: 1;
   transition-delay: 0s;
 }
 
-.image-switch-item:hover::after {
+.image-switch__item:hover::after {
   background-color: var(--main-color-light);
 }
 
@@ -338,28 +338,28 @@ footer p {
     flex-direction: row-reverse;
 }
 
-.member-info {
+.member-card__info {
     flex: 1;
     margin-left: 30px;
     margin-right: 30px;
     text-align: left;
 }
 
-.member-info h3 {
+.member-card__name {
     color: var(--main-color-dark);
     font-size: 30px;
     margin-bottom: 15px;
     text-align: left;
 }
 
-.member-info p {
+.member-card__text {
     font-size: 17px;
     color: var(--color-text-muted);
     margin-bottom: 10px;
     text-align: left;
 }
 
-.member-info p strong {
+.member-card__text strong {
     color: var(--main-color);
 }
 
@@ -373,7 +373,7 @@ footer p {
     margin: 0 auto;
 }
 
-.project-item {
+.project-card {
     display: grid;
     grid-template-columns: 400px 1fr;
     gap: 40px;
@@ -385,45 +385,45 @@ footer p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-item:hover {
+.project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 14px 30px var(--shadow-general-hover);
 }
 
-.project-item:nth-child(even) {
+.project-card:nth-child(even) {
     grid-template-columns: 1fr 400px;
 }
 
-.project-item:nth-child(even) .project-image {
+.project-card:nth-child(even) .project-card__image {
     order: 2;
 }
 
-.project-info {
+.project-card__info {
     flex: 1;
     text-align: left;
     margin-left: 30px;
     margin-right: 30px;
 }
 
-.project-info h3 {
+.project-card__title {
     color: var(--main-color-dark);
     font-size: 28px;
     margin-bottom: 12px;
     text-align: left;
 }
 
-.project-info p {
+.project-card__text {
     font-size: 16px;
     color: var(--color-text-muted);
     margin-bottom: 10px;
     text-align: left;
 }
 
-.project-info p strong {
+.project-card__text strong {
     color: var(--main-color);
 }
 
-.project-award {
+.project-card__award {
     background-color: var(--main-color-light);
     border-left: 5px solid var(--main-color);
     padding: 10px 15px;
@@ -548,12 +548,12 @@ tbody td:nth-child(4) {
 
 /* ФОРМА (contact.html) */
 
-.contact-section {
+.contact {
   display: flex;
   justify-content: center;
 }
 
-.contact-form {
+.contact__form {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -565,33 +565,33 @@ tbody td:nth-child(4) {
   padding: 40px 30px;
 }
 
-.contact-title {
+.contact__title {
   font-size: 28px;
   text-align: center;
   color: var(--main-color);
   margin-bottom: 5px;
 }
 
-.contact-subtitle {
+.contact__subtitle {
   font-size: 15px;
   text-align: center;
   color: var(--color-text-muted);
   margin: 0 0 10px;
 }
 
-.contact-field {
+.contact__field {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.contact-label {
+.contact__label {
   font-size: 15px;
   color: var(--color-text-muted);
   font-weight: bold;
 }
 
-.contact-input {
+.contact__input {
   width: 100%;
   padding: 12px 15px;
   font-size: 16px;
@@ -603,23 +603,23 @@ tbody td:nth-child(4) {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-input:focus {
+.contact__input:focus {
   outline: none;
   border-color: var(--main-color);
   box-shadow: 0 0 0 3px var(--color-overlay-bar);
 }
 
-.contact-input::placeholder {
+.contact__input::placeholder {
   color: var(--color-text-muted);
   opacity: 0.7;
 }
 
-.contact-textarea {
+.contact__input--textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-.contact-check {
+.contact__check {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -628,7 +628,7 @@ tbody td:nth-child(4) {
   color: var(--color-text-muted);
 }
 
-.contact-checkbox {
+.contact__checkbox {
   width: 18px;
   height: 18px;
   margin-top: 3px;
@@ -637,12 +637,12 @@ tbody td:nth-child(4) {
   flex-shrink: 0;
 }
 
-.contact-check-text {
+.contact__check-text {
   line-height: 1.4;
   text-align: left;
 }
 
-.contact-submit {
+.contact__submit {
   padding: 14px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -655,16 +655,16 @@ tbody td:nth-child(4) {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.contact-submit:hover {
+.contact__submit:hover {
   background-color: var(--main-color-dark);
   transform: translateY(-2px);
 }
 
-.contact-submit:active {
+.contact__submit:active {
   transform: translateY(0);
 }
 
-.contact-hint {
+.contact__hint {
   font-size: 14px;
   text-align: center;
   color: var(--main-color);
