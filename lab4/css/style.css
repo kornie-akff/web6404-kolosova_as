@@ -474,7 +474,6 @@ footer p {
 
 .youtube-cover:hover .play-icon {
     background-color: var(--color-play-hover);
-    transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* таблица достижений */
@@ -671,4 +670,19 @@ tbody td:nth-child(4) {
   color: var(--main-color);
   min-height: 1.4em;
   margin: 0;
+}
+
+/* css анимация — парение иконки play */
+
+@keyframes playFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -56%) scale(1.05);
+  }
+}
+
+.youtube-cover:hover .play-icon {
+  animation: playFloat 1.2s ease-in-out infinite;
 }
