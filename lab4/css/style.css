@@ -546,3 +546,129 @@ tbody td:nth-child(3) {
 tbody td:nth-child(4) {
     text-align: right;
 }
+
+/* ФОРМА (contact.html) */
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--color-surface);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px var(--shadow-general);
+  padding: 40px 30px;
+}
+
+.contact-title {
+  font-size: 28px;
+  text-align: center;
+  color: var(--main-color);
+  margin-bottom: 5px;
+}
+
+.contact-subtitle {
+  font-size: 15px;
+  text-align: center;
+  color: var(--color-text-muted);
+  margin: 0 0 10px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-label {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  font-weight: bold;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--color-text);
+  background-color: var(--main-color-light);
+  border: 2px solid var(--color-transparent);
+  border-radius: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 3px var(--color-overlay-bar);
+}
+
+.contact-input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.contact-checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--main-color);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.contact-check-text {
+  line-height: 1.4;
+  text-align: left;
+}
+
+.contact-submit {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+  color: var(--color-text-inverse);
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-submit:hover {
+  background-color: var(--main-color-dark);
+  transform: translateY(-2px);
+}
+
+.contact-submit:active {
+  transform: translateY(0);
+}
+
+.contact-hint {
+  font-size: 14px;
+  text-align: center;
+  color: var(--main-color);
+  min-height: 1.4em;
+  margin: 0;
+}
