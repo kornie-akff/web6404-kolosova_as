@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Цитрус — Связаться с нами</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html" class="header__logo">
+        <img src="imgs/logo.png" alt="Citrus Logo" class="header__logo-img" />
+      </a>
+      <nav class="header__nav">
+        <a href="members.html" class="btn">Участницы</a>
+        <a href="projects.html" class="btn">Проекты</a>
+        <a href="achievements.html" class="btn">Достижения</a>
+        <a href="contact.html" class="btn btn--blocked">Связаться</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact">
+        <form class="contact__form" id="contact-form" novalidate>
+          <h1 class="contact__title">Связаться с CITRUS</h1>
+          <p class="contact__subtitle">
+            Хочешь участвовать в проекте, предложить сотрудничество или просто
+            написать нам? Заполни форму — мы ответим!
+          </p>
+
+          <label class="contact__field">
+            <span class="contact__label">Как тебя зовут</span>
+            <input
+              type="text"
+              name="name"
+              class="contact__input"
+              placeholder="Имя или ник"
+              required
+            />
+          </label>
+
+          <label class="contact__field">
+            <span class="contact__label">Email для связи</span>
+            <input
+              type="email"
+              name="email"
+              class="contact__input"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <label class="contact__field">
+            <span class="contact__label">Telegram для связи</span>
+            <input
+              type="text"
+              name="telegram"
+              class="contact__input"
+              placeholder="@username"
+              autocomplete="off"
+              required
+            />
+          </label>
+
+          <label class="contact__field">
+            <span class="contact__label">Сообщение</span>
+            <textarea
+              name="message"
+              class="contact__input contact__input--textarea"
+              rows="5"
+              placeholder="Участие в проекте, сотрудничество или просто вопрос..."
+              required
+            ></textarea>
+          </label>
+
+          <label class="contact__check">
+            <input
+              type="checkbox"
+              name="agree"
+              class="contact__checkbox"
+              required
+            />
+            <span class="contact__check-text">
+              Согласен на обработку персональных данных
+            </span>
+          </label>
+
+          <button type="submit" class="contact__submit">Отправить</button>
+
+          <p class="contact__hint" id="contact-result"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <section>
+        <a
+          href="https://www.tiktok.com/@citrus_cdt"
+          target="_blank"
+          class="btn btn--tiktok"
+          >TikTok</a
+        >
+        <a
+          href="https://www.youtube.com/@CITRUS_CDT"
+          target="_blank"
+          class="btn btn--youtube"
+          >YouTube</a
+        >
+        <a
+          href="https://t.me/citrus_cdt"
+          target="_blank"
+          class="btn btn--telegram"
+          >Telegram</a
+        >
+      </section>
+      <p>© 2026 CITRUS CDT</p>
+    </footer>
+
+    <script src="js/form.js"></script>
+  </body>
+</html>

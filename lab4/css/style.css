@@ -1,0 +1,703 @@
+/* общие цвета как переменные */
+:root {
+    --main-color: #7149ab;
+    --main-color-light: #e4d7f7;
+    --main-color-dark: #4a306e;
+
+    --color-surface: #FFFFFF;
+
+    --color-tiktok: #cba9ff;
+    --color-tiktok-hover: #9f83ca;
+    --color-youtube: #c20000;
+    --color-youtube-hover: #9f0000;
+    --color-telegram: #0080c0;
+    --color-telegram-hover: #006699;
+
+    --color-text: #333333;
+    --color-text-muted: #444444;
+    --color-text-inverse: #FFFFFF;
+
+    --color-play: rgba(255, 0, 0, 0.85);
+    --color-play-hover: #ff0000;
+    --color-overlay-bar: rgba(255, 255, 255, 0.4);
+    --color-transparent: transparent;
+
+    --shadow-general: rgba(0, 0, 0, 0.15);
+    --shadow-general-hover: rgba(0, 0, 0, 0.25);
+    --shadow-header: rgba(0, 0, 0, 0.5);
+
+    --color-border: #EEEEEE;
+}
+
+/* общие настройки */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--main-color-light);
+}
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    color: var(--main-color-dark);
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+
+/* шапка */
+
+.header {
+    background-color: var(--main-color);
+    padding: 16px 60px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: 0 4px 10px var(--shadow-header);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__nav {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    justify-content: flex-end;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header__logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+}
+
+/* кнопки */
+
+.btn,
+.btn--blocked {
+    display: inline-block;
+    padding: 10px 25px;
+    width: 160px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid var(--color-transparent);
+}
+
+.btn {
+    background-color: var(--main-color-light);
+    color: var(--main-color);
+}
+
+.btn:hover {
+    background-color: var(--main-color-dark);
+    color: var(--main-color-light);
+}
+
+.btn--blocked {
+    background-color: var(--main-color);
+    color: var(--main-color-light);
+}
+
+.btn--tiktok {
+    background-color: var(--color-tiktok);
+    color: var(--color-text);
+    margin: 0px 20px;
+}
+
+.btn--tiktok:hover {
+    background-color: var(--color-tiktok-hover);
+    color: var(--color-text);
+}
+
+.btn--youtube {
+    background-color: var(--color-youtube);
+    color: var(--color-text-inverse);
+    margin: 0px 20px;
+}
+
+.btn--youtube:hover {
+    background-color: var(--color-youtube-hover);
+    color: var(--color-text-inverse);
+}
+
+.btn--telegram {
+    background-color: var(--color-telegram);
+    color: var(--color-text-inverse);
+    margin: 0px 20px;
+}
+
+.btn--telegram:hover {
+    background-color: var(--color-telegram-hover);
+    color: var(--color-text-inverse);
+}
+
+.member-card__tg {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 20px;
+    height: 40px;
+    width: 40px;
+}
+
+/* секции */
+
+section {
+    padding: 20px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* низ */
+
+.footer {
+    background-color: var(--main-color-dark);
+    color: var(--color-text-inverse);
+    text-align: center;
+    padding-bottom: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* карточки участниц и проектов */
+
+.member-card__image,
+.project-card__image,
+.group-image {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px var(--shadow-general);
+  transition: all 0.3s ease-in-out;
+}
+
+.member-card__image {
+    width: 400px;
+    height: 400px;
+}
+
+.project-card__image {
+    width: 400px;
+    height: 520px;
+}
+
+.group-image {
+    width: auto;
+    height: auto;
+}
+
+.member-card__image > img,
+.project-card__image > img,
+.group-image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
+}
+
+.image-switch {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  opacity: 0;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.image-switch__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.image-switch__item::after {
+  content: "";
+  width: 90%;
+  margin: 0 auto;
+  height: 10px;
+  z-index: 10;
+  background-color: var(--color-overlay-bar);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.image-switch__switched {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out 0.1s;
+  pointer-events: none;
+}
+
+.image-switch__switched img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
+}
+
+.member-card__image:hover .image-switch,
+.project-card__image:hover .image-switch,
+.group-image:hover .image-switch {
+  opacity: 1;
+}
+
+.image-switch__item:hover .image-switch__switched {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.image-switch__item:hover::after {
+  background-color: var(--main-color-light);
+}
+
+/* FLEXBOX список участниц */
+
+.members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.member-card {
+    flex-direction: row;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: var(--color-surface);
+    box-shadow: 0 6px 20px var(--shadow-general);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px var(--shadow-general-hover);
+}
+
+.member-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.member-card__info {
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: left;
+}
+
+.member-card__name {
+    color: var(--main-color-dark);
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.member-card__text {
+    font-size: 17px;
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.member-card__text strong {
+    color: var(--main-color);
+}
+
+/* GRID список проектов */
+
+.projects-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+    align-items: center;
+    background-color: var(--color-surface);
+    box-shadow: 0 6px 20px var(--shadow-general);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px var(--shadow-general-hover);
+}
+
+.project-card:nth-child(even) {
+    grid-template-columns: 1fr 400px;
+}
+
+.project-card:nth-child(even) .project-card__image {
+    order: 2;
+}
+
+.project-card__info {
+    flex: 1;
+    text-align: left;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.project-card__title {
+    color: var(--main-color-dark);
+    font-size: 28px;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.project-card__text {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.project-card__text strong {
+    color: var(--main-color);
+}
+
+.project-card__award {
+    background-color: var(--main-color-light);
+    border-left: 5px solid var(--main-color);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.youtube-cover {
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.youtube-cover:hover {
+    transform: scale(1.08);
+}
+
+.youtube-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: var(--color-play);
+    color: var(--color-text-inverse);
+    font-size: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.youtube-cover:hover .play-icon {
+    background-color: var(--color-play-hover);
+}
+
+/* таблица достижений */
+
+.table-section {
+    padding: 20px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: var(--color-surface);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-general);
+}
+
+thead {
+    background-color: var(--main-color);
+}
+
+thead th {
+    color: var(--color-text-inverse);
+    font-size: 16px;
+    padding: 15px 20px;
+    border-bottom: 2px solid var(--main-color);
+    vertical-align: middle;
+}
+
+tbody td {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 15px;
+    color: var(--color-text);
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: var(--main-color-light);
+}
+
+tbody td a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+tbody td a:hover {
+    color: var(--main-color-dark);
+    text-decoration: underline;
+}
+
+tbody td:nth-child(1) {
+    font-weight: bold;
+    color: var(--main-color-dark);
+}
+
+thead th,
+tbody td:nth-child(1),
+tbody td:nth-child(3) {
+    text-align: center;
+}
+tbody td:nth-child(4) {
+    text-align: right;
+}
+
+/* ФОРМА (contact.html) */
+
+.contact {
+  display: flex;
+  justify-content: center;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--color-surface);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px var(--shadow-general);
+  padding: 40px 30px;
+}
+
+.contact__title {
+  font-size: 28px;
+  text-align: center;
+  color: var(--main-color);
+  margin-bottom: 5px;
+}
+
+.contact__subtitle {
+  font-size: 15px;
+  text-align: center;
+  color: var(--color-text-muted);
+  margin: 0 0 10px;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__label {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  font-weight: bold;
+}
+
+.contact__input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--color-text);
+  background-color: var(--main-color-light);
+  border: 2px solid var(--color-transparent);
+  border-radius: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact__input:focus {
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 3px var(--color-overlay-bar);
+}
+
+.contact__input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.contact__input--textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.contact__checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--main-color);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.contact__check-text {
+  line-height: 1.4;
+  text-align: left;
+}
+
+.contact__submit {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+  color: var(--color-text-inverse);
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact__submit:hover {
+  background-color: var(--main-color-dark);
+  transform: translateY(-2px);
+}
+
+.contact__submit:active {
+  transform: translateY(0);
+}
+
+.contact__hint {
+  font-size: 14px;
+  text-align: center;
+  color: var(--main-color);
+  min-height: 1.4em;
+  margin: 0;
+}
+
+/* css анимация — парение иконки play */
+
+@keyframes playFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -56%) scale(1.05);
+  }
+}
+
+.youtube-cover:hover .play-icon {
+  animation: playFloat 1.2s ease-in-out infinite;
+}
+
+/* css анимация — парение иконки telegram в карточке участницы */
+
+@keyframes tgFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.1);
+  }
+}
+
+.member-card__tg:hover img {
+  animation: tgFloat 1.2s ease-in-out infinite;
+}
