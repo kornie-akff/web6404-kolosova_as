@@ -686,3 +686,18 @@ tbody td:nth-child(4) {
 .youtube-cover:hover .play-icon {
   animation: playFloat 1.2s ease-in-out infinite;
 }
+
+/* css анимация — парение иконки telegram в карточке участницы */
+
+@keyframes tgFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.1);
+  }
+}
+
+.member-card__tg:hover img {
+  animation: tgFloat 1.2s ease-in-out infinite;
+}
