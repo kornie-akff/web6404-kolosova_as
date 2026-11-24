@@ -284,7 +284,7 @@ footer p {
   background-color: var(--main-color--light);
 }
 
-/* список участниц */
+/* FLEXBOX список участниц */
 
 .members-list {
     display: flex;
@@ -295,13 +295,23 @@ footer p {
 }
 
 .member-card {
+    flex-direction: row;
     display: flex;
     gap: 40px;
     align-items: center;
+
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+
     padding: 30px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
 }
 
 .member-card:nth-child(even) {
@@ -311,7 +321,8 @@ footer p {
 .member-info {
     flex: 1;
     margin-left: 30px;
-    margin-right: 60px;
+    margin-right: 30px;
+    text-align: left;
 }
 
 .member-info h3 {
@@ -323,7 +334,9 @@ footer p {
 
 .member-info p {
     font-size: 17px;
+
     color: #444;
+    
     margin-bottom: 10px;
     text-align: left;
 }
